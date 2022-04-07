@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EEF9BF;
+}
+
+/* Título */
+.topo {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+h1 {
+    font-size: 64px;
+    color: #75B79E;
+}
+
+.carta {
+    width: 200px;
+    height: 200px;
+}
