@@ -1,5 +1,9 @@
 // declaração de funções
 
+function comparador() { 
+	return Math.random() - 0.5; 
+}
+
 function gameSettings() {
     let numCards;
     let validNumCards;
@@ -19,29 +23,30 @@ function createCards(numCards) {
     const game = document.querySelector(".container");
     const cards = [];
     for(let i = 0; i < cardTypes; i++){
-        // objeto carta
+        // objetos carta
         const cardA = {
-            seletor: game.querySelector(`.card-${i}.a`),
+            seletor: "",
             type:  `card-${i}`,
             id: 'a',
         }
         const cardB = {
-            seletor: game.querySelector(`.card-${i}.b`),
+            seletor: "",
             type:  `card-${i}`,
             id: 'b',
         }
         cards.push(cardA);
-        cards.push(cardB);
+        cards.push(cardB);                
+    }
+    cards.sort(comparador);
 
-        // adicionando ao container
-        game.innerHTML += `<div class="card card-${i} a">
-        <img src="/arquivos/imgs/front.png" alt="papagaio">
-        </div>
-        <div class="card card-${i} b">
+    // adicionando ao container
+    for(let i = 0; i < numCards; i++) {
+        game.innerHTML += `<div class="card ${cards[i].type} a">
         <img src="/arquivos/imgs/front.png" alt="papagaio">
         </div>`
+        cards[i].seletor = `.${cards[i].type}.${cards[i].id}`;
     }
-    console.log(cards, cards[0], cards[1]);
+    console.log(cards);
 }
 
 function gameStart() {
