@@ -17,7 +17,52 @@ h1 {
     color: #75B79E;
 }
 
-.carta {
-    width: 200px;
-    height: 200px;
+/* Jogo */
+
+.container {
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* cartas */
+
+.card {
+    background-color: #A7E9AF;
+    width: 117px;
+    height: 146px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #99CEA8;
+
+    margin: 17px;
+}
+.card > img {
+    height: 100px;
+}
+
+/* identificadores */
+
+.card-0 {
+    background-color: yellow;
+}
+.card-1 {
+    background-color: oldlace;
+}
+.card-2 {
+    background-color: blueviolet;
+}
+.card-3 {
+    background-color: black;
+}
+.card-4 {
+    background-color: lawngreen;
+}
+.card-5 {
+    background-color: lemonchiffon;
+}
+.card-6 {
+    background-color: maroon;
 }
