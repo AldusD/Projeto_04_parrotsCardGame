@@ -39,8 +39,11 @@ h1 {
 
     margin: 17px;
 }
-.card > img {
+.card > .image {
     height: 100px;
+}
+.card > .gif {
+    display: none;
 }
 
 /* identificadores */
@@ -65,4 +68,13 @@ h1 {
 }
 .card-6 {
     background-color: maroon;
+}
+
+/* acoes */
+.opened > .gif, .finished > .gif {
+    display: inline;
+    width: 100px;
+}
+.opened > .image, .finished > .image {
+    display: none;
 }
