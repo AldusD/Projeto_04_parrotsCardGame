@@ -58,13 +58,13 @@ function flipCard(card) {
             initOpBST = initCardST.status;
             cardJs.status = "opened";
         }
-        updateCards(cardJs, openedBeforeJs, initCardST, initOpBST);
+        updateCards(cardJs, openedBeforeJs);
         // jogadas só são computadas quando a acertos ou erros para não somar clique superfluos
         // (em cartas que acabaram de ser clicadas ou em cartas acertadas)
     }    
 }
 
-function updateCards(cardJs, openedBeforeJs, initCardST, initOpBST) {
+function updateCards(cardJs, openedBeforeJs) {
     // mostra a carta para o usuario depois aplica os status definidos pela logica em flipCards
     // removendo os status iniciais e aplicando os finais
     let card1 = game.querySelector(cardJs.selector);
