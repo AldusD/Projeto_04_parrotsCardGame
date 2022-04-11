@@ -13,7 +13,7 @@ body {
     justify-content: center;
 }
 h1 {
-    font-size: 64px;
+    font-size: 3em;
     color: #75B79E;
 }
 
@@ -24,57 +24,84 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
+    position: relative;
 }
 
 /* cartas */
 
 .card {
-    background-color: #A7E9AF;
+    /* background-color: #A7E9AF; */
     width: 117px;
     height: 146px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #99CEA8;
-
     margin: 17px;
-}
-.card > .image {
-    height: 100px;
-}
-.card > .gif {
-    display: none;
-}
 
-/* identificadores */
-
-.card-0 {
-    background-color: yellow;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
 }
-.card-1 {
-    background-color: oldlace;
-}
-.card-2 {
-    background-color: blueviolet;
-}
-.card-3 {
-    background-color: black;
-}
-.card-4 {
-    background-color: lawngreen;
-}
-.card-5 {
-    background-color: lemonchiffon;
-}
-.card-6 {
-    background-color: maroon;
-}
-
-/* acoes */
-.opened > .gif, .finished > .gif {
-    display: inline;
+.card img {
     width: 100px;
 }
-.opened > .image, .finished > .image {
-    display: none;
+.face {
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #99CEA8;
+
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+  }
+
+  .back-face {
+    transform: rotateY(180deg);
+  }
+
+  .card.opened .back-face, .card.finished .back-face {
+    transform: rotateY(0deg);
+  }
+
+  .card.opened .front-face , .card.finished .front-face {
+    transform: rotateY(-180deg);
+  }
+
+/* relogio */
+.relogio {
+    position: absolute;
+    right: 4%;
+    top: 5%;
 }
+
+h2 {
+    color: #75B79E;
+    font-size: 1.5em;
+}
+
+p {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+
+  @media (max-width: 700px) {
+      .container {
+          margin-top: 20px;
+          flex-direction: column;
+          align-items: center;
+      }
+
+      .relogio {
+          top: 14%;
+          right: 45%;
+      }
+  }
